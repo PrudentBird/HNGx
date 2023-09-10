@@ -7,9 +7,9 @@ function updateCurrentTime() {
   currentDay.textContent = daysOfWeek[currentDate.getUTCDay()];
 
   const currentUTCTime = document.querySelector('[data-testid="currentUTCTime"]');
-  currentUTCTime.textContent = Date.now();
+  currentUTCTime.textContent = `${Date.now()} ms`;
 }
 
 updateCurrentTime();
 
-setInterval(updateCurrentTime, 1);
+setInterval(updateCurrentTime, 100);
