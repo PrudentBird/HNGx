@@ -71,6 +71,13 @@ h1 {
     margin-bottom: 10px;
 }
 
+h1 span {
+    text-align: left;
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
 .img-container {
     position: relative;
     display: flex;
@@ -206,6 +213,10 @@ a {
 
     h1 {
         margin-top: 30px;
+        font-size: 1.75rem;
+    }
+
+    h1 span {
         font-size: 1.75rem;
     }
 
