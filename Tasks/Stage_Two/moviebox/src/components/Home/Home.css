@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;0,9..40,1000;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700;1,9..40,800;1,9..40,900;1,9..40,1000&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.banner-container {
+    width: 100%;
+    display: flex;
+    height: 50rem;
+}
+
+.banner-img-block {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background-size: 100%;
+}
+
+.banner-img-overlay {
+    height: 50rem;
+    position: relative;
+    background: #0009;
+}
+
+.banner-content-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    padding: 0 127.875px;
+}
+
+.banner-content {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    width: 400px;
+}
+
+.banner-content-title {
+    color: #FFF;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 12px;
+}
+
+.banner-movie-ratings {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 34px;
+}
+
+.banner-movie-rating {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.banner-rating-img-block-average {
+    width: 52.5px;
+    height: 25.5px;
+}
+
+.banner-rating-img-block-count {
+    width: 24px;
+    height: 25.5px;
+}
+
+.banner-movie-rating img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner-movie-rating p {
+    color: #FFF;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.banner-content-overview {
+    margin-bottom: 30px;
+    color: #FFF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    width: 400px;
+    margin-bottom: 4px;
+}
+
+.banner-ctabtn {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    display: flex;
+    padding: 16px 26px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 6px;
+    background: var(--rose-700, #BE123C);
+}
+
+.banner-ctabtn span {
+    color: var(--white, #FFF);
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.banner-ctabtn-icon {
+    font-size: 1rem;
+    color: var(--white, #FFF);
+}
+
+.banner-pagination {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.banner-page-indicator {
+    color: #fff;
+    font-size: 20px;
+}
+
+.banner-page-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.banner-page-list-item {
+    color: var(--gray-400, #9CA3AF);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.active-page-list-item {
+    color: #FFF;
+    font-size: 20px;
+}
+
+.featured-container {
+    padding: 3.13rem 100px;    
+}
+
+.link-container {
+    text-decoration: none;
+}
+
+.featured-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 44px;
+    padding: 0 27.875px;
+}
+
+.featured-header h2 {
+    color: #000;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.featured-ctabtn {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.featured-ctabtn span {
+    color: var(--rose-700, #BE123C);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.featured-ctabtn-icon {
+    font-size: 0.85rem;
+    line-height: normal;
+    color: var(--rose-700, #BE123C);
+}
+
+.featured-movies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.moviecard {
+    flex: 1 1 calc(25% - 50px);
+    margin: 0 25px 100px;
+}
+
+.moviecard-content {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 1;
+    width: 250px;
+}
+
+.movie-poster {
+    width: 250px;
+    height: 370px;
+}
+
+.favourite-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+}
+
+.favourite-container {
+    cursor: pointer;
+    margin: 15px 0 0 205px;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(243, 244, 246, 0.50);
+    backdrop-filter: blur(1px);
+    transform: scale(1);
+    transition: transform .3s ease-in-out;
+}
+
+.favourite-wrap:hover .favourite-container {
+  transform: scale(1.1);
+}
+
+.favourite-icon {
+  color: #FFF;
+}
+
+.active {
+    color: var(--rose-700, #BE123C);
+}
+
+.movie-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+    justify-content: left;
+}
+
+.movie-release-date {
+    color: var(--gray-400, #9CA3AF);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: left;
+}
+
+.movie-title {
+    color: var(--gray-900, #111827);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.movie-ratings {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.movie-rating {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.rating-img-block-average {
+    width: 35px;
+    height: 17px;
+}
+
+.rating-img-block-count {
+    width: 16px;
+    height: 17px;
+}
+
+.movie-rating img {
+    width: 100%;
+}
+
+.movie-rating p {
+    color: var(--gray-900, #111827);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.movie-genres {
+    color: var(--gray-400, #9CA3AF);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}

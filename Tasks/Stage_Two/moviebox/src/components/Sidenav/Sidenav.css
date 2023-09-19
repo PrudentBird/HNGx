@@ -1,0 +1,142 @@
+.sidenav-wrap {
+    width: 16rem;
+    height: 63.2rem;
+    border-radius: 0rem 2.8125rem 2.8125rem 0rem;
+    border: 1px solid rgba(0, 0, 0, 0.30);
+    background: #FFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidenav-link-route {
+    text-decoration: none;
+}
+
+.sidenav-logo-wrap {
+  display: flex;
+  align-items: flex-start                                                                           ;
+}
+
+.sidenav-logo-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 52px;
+    margin-bottom: 75px;
+    text-decoration: none;
+}
+
+.sidenav-logo-img-block {
+    width: 50px;
+    height: 50px;
+}
+
+.sidenav-logo-img-block img {
+    width: 100%;
+}
+
+.sidenav-logo-txt {
+    color: #333;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.sidenav-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 15px 25px;
+}
+
+.sidenav-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidenav-list-item {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    padding: 14px 0;
+    margin: 8px 0;
+    justify-content: unset;
+}
+
+.sidenav-list-item i {
+    font-size: 1.25rem;
+    color: #333;
+    display: flex;
+    margin-right: 14px;
+}
+
+.sidenav-list-item span {
+    font-size: 1.25rem;
+    display: inline-block;
+    position: relative;
+    color: #333;
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.sidenav-list-extension {
+    margin-bottom: 70px;
+}
+
+.sidenav-list-extension .sidenav-list-item {
+  justify-content: space-between;
+}
+
+.playQuiz {
+    margin-top: 58px;
+    margin-bottom: 34px;
+    width: 12rem;
+    height: 15rem;
+    flex-shrink: 0;
+    border-radius: 1.25rem;
+    border: 1px solid rgba(190, 18, 60, 0.70);
+    background: rgba(248, 231, 235, 0.40);
+    display: inline-flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 3rem 1rem;
+}
+
+.playQuiz h3 {
+    color: rgba(51, 51, 51, 0.80);
+    font-family: Poppins;
+    font-size: 1.1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.playQuiz p {
+    color: #666;
+    font-family: Poppins;
+    font-size: 0.85rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.playQuiz button {
+    width: 7rem;
+    height: 1.875rem;
+    flex-shrink: 0;
+    border-radius: 1.875rem;
+    background: rgba(190, 18, 60, 0.20);
+    color: #BE123C;
+    font-family: Poppins;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    border: none;
+    cursor: pointer;
+}
