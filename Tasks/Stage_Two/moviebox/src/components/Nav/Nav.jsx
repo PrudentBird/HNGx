@@ -78,10 +78,18 @@ const Nav = ({ className }) => {
                 toggleSearchActivation();
               }}
             />
-            <i
-              className={`search-icon fa-solid ${isSearchActive ? 'fa-xmark' : 'fa-magnifying-glass'}`}
-              onClick={clearInputField}
-            ></i>
+            <button className='search-submit'>
+              <i
+                className={`search-icon fa-solid ${isSearchActive ? 'fa-xmark' : 'fa-magnifying-glass'}`}
+                onClick={(event) => {
+                  if (isSearchActive) {
+                    event.preventDefault();
+                    clearInputField();
+                    event.stopPropagation();
+                  }
+                }}
+              ></i>
+            </button>
           </form>
           <div className="navigation-wrap">
             <span>Sign in</span>

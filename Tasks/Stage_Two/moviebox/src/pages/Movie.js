@@ -41,6 +41,13 @@ const Movie = () => {
                 <h2 data-testid='movie-title'>{movie.original_title}</h2>
                 <p data-testid='movie-release-date'>{movie.release_date}</p>
                 <p data-testid='movie-runtime'>{`${Math.floor(movie.runtime / 60)}h ${movie.runtime % 60}m`}</p>
+                <div>
+                  {movie.genres && Array.isArray(movie.genres) && movie.genres.map((genre, index) => (
+                    <button key={index}>
+                      {genre.name}
+                    </button>
+                  ))}
+                </div>
               </div>
               <p data-testid='movie-overview'>{movie.overview}</p>
             </div>

@@ -35,7 +35,7 @@ const Search = () => {
 
   return (
     <div>
-        <Nav className={isSearchPage ? 'search' : ''} />
+        <Nav className="search-nav" />
         <div className="search-container">
             <div className='search-header'>
                 <h2>Search Results for '{`${decodedQuery}`}'</h2>

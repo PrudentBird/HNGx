@@ -43,23 +43,6 @@
     text-decoration: none;
 }
 
-.search.navbar {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background: #111827;
-    height: 85px;
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-.search.navbar-shadow {
-    position: fixed;
-}
-
-.search.navbar-wrap {
-    padding-top: 0;
-}
-
 .logo-wrap {
     display: flex;
     align-items: center;
@@ -109,6 +92,11 @@ img {
     color: #D1D5DB;
 }
 
+.search-submit {
+    background: none;
+    border: none;
+}
+
 .search-icon {
     color: #D1D5DB;
 }
@@ -130,4 +118,13 @@ img {
     font-style: normal;
     font-weight: 700;
     line-height: 24px;
+}
+
+.search-nav .navbar-wrap {
+    padding-top: 0;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    background: #111827;
+    height: 85px;
 }
