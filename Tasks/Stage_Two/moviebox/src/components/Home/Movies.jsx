@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import { useState, useEffect } from 'react'
 import MovieCard from './MovieCard'
 
@@ -6,15 +6,10 @@ const Movies = () => {
     const [ movies, setMovies ] = useState([])
 
     useEffect(() => {
-      const options = {
-        method: 'GET',
-        headers: {
-          accept: 'application/json',
-          Authorization: `Bearer ${process.env.REACT_APP_ACCESS_TOKEN}`
-        }
-      };
+      const apiKey = process.env.REACT_APP_API_KEY;
+      const apiUrl = `https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1&api_key=${apiKey}`;
       
-      fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options)
+      fetch(apiUrl)
         .then(response => response.json())
         .then(data => setMovies(data.results))
         .catch(err => console.error(err));
