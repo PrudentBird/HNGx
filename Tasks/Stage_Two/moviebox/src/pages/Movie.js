@@ -9,21 +9,44 @@ import FetchRelated from '../components/Movie/FetchRelated';
 const Movie = () => {
   const { movieId } = useParams();
   const [movie, setMovieDetail] = useState({});
-  const [cast, setCast] = useState([]);
+  const [directors, setDirectors] = useState('');
+  const [writers, setWriters] = useState('');
+  const [stars, setStars] = useState('');
 
- useEffect(() => {
-    const apiKey =  process.env.REACT_APP_API_KEY;
+  useEffect(() => {
+    const apiKey = process.env.REACT_APP_API_KEY;
     const apiUrl = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`;
     const apiCastUrl = `https://api.themoviedb.org/3/movie/${movieId}/credits?language=en-US&api_key=${apiKey}`;
   
     fetch(apiUrl)
-      .then(response => response.json())
+      .then((response) => response.json())
       .then((data) => setMovieDetail(data))
-      .catch(err => console.error(err));
-
+      .catch((err) => console.error(err));
+  
     fetch(apiCastUrl)
       .then((response) => response.json())
-      .then((data) => { const filteredCast = data.cast.filter((castMember) => castMember.popularity > 20); setCast(filteredCast); })
+      .then((data) => {
+        const directorsList = data.crew
+          .filter((crewMember) => crewMember.job === 'Director')
+          .map((director) => director.name)
+          .slice(0, 6)
+          .join(', ');
+  
+        const writersList = data.crew
+          .filter((crewMember) => crewMember.department === 'Writing')
+          .map((writer) => writer.name)
+          .slice(0, 6)
+          .join(', ');
+  
+        const starsList = data.cast
+          .map((castMember) => castMember.name)
+          .slice(0, 6)
+          .join(', ');
+  
+        setDirectors(directorsList);
+        setWriters(writersList);
+        setStars(starsList);
+      })
       .catch((err) => console.error(err));
   }, [movieId]);  
 
@@ -38,22 +61,24 @@ const Movie = () => {
           <div className='movie-details-info-main'>
             <div className='movie-details-info-main-header'>
               <div className='movie-details-info-header'>
-                <h2 data-testid='movie-title'>{movie.original_title}</h2>
-                <p data-testid='movie-release-date'>{movie.release_date}</p>
-                <p data-testid='movie-runtime'>{`${Math.floor(movie.runtime / 60)}h ${movie.runtime % 60}m`}</p>
-                <div>
+                <h2 data-testid='movie-title' className='movie-details-title'>{movie.original_title}</h2>
+                <p data-testid='movie-release-date' className='movie-details-release-date'>{movie.release_date ? movie.release_date.split('-')[0] : 'Null'}</p>
+                <p data-testid='movie-runtime' className='movie-details-runtime'>{`${Math.floor(movie.runtime / 60)}h ${movie.runtime % 60}m`}</p>
+                <div className='movie-details-genre-wrap'>
                   {movie.genres && Array.isArray(movie.genres) && movie.genres.map((genre, index) => (
-                    <button key={index}>
+                    <button className='movie-details-genre' key={index}>
                       {genre.name}
                     </button>
                   ))}
                 </div>
               </div>
-              <p data-testid='movie-overview'>{movie.overview}</p>
+              <p data-testid='movie-overview' className='movie-details-overview'>{movie.overview}</p>
             </div>
             <div className='movie-details-info-main-footer'>
-              <div className='movie-info-cast-wrap'>
-              <p>Credits: {cast.map((castMember) => `${castMember.name}(${castMember.character})`).join(', ')}</p>
+              <div className='movie-info-credits-wrap'>
+                <p className='movie-info-directors'>Directors: <span>{directors}</span></p>
+                <p className='movie-info-writers'>Writers: <span>{writers}</span></p>
+                <p className='movie-info-stars'>Stars: <span>{stars}</span></p>
               </div>
               <div className='movie-detail-info-rating'>
                 <div className='movie-detail-rating-wrap'>
@@ -61,7 +86,7 @@ const Movie = () => {
                     <span>Top&nbsp;Rated&nbsp;Movie&nbsp;#{Math.round(movie.vote_average * 10)}</span>
                   </div>
                   <div className='movie-detail-rating-side'>
-                    <span className='movie-detail-rating-span'>Awards 9 nominations</span>
+                    <span className='movie-detail-rating-span'>View Movie Cast</span>
                     <i className="fa-solid fa-chevron-down"></i>
                   </div>
                 </div>

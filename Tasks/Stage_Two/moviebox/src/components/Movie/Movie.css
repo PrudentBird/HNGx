@@ -35,11 +35,11 @@
     margin: 0 37px;
     display: flex;
     justify-content: space-between;
+    gap: 5rem;
     height: 100%;
 }
 
 .movie-details-info-main {
-    width: 600px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -48,7 +48,7 @@
 .movie-details-info-main-header {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 15px;
     padding-bottom: 20px;
     border-bottom: 1px solid rgba(255, 0, 0, 0.25);
 }
@@ -56,10 +56,16 @@
 .movie-details-info-header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 2rem;
 }
 
-.movie-details-info-header h2 {
+.movie-details-overview {
+    color: #404040;
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+.movie-details-title {
     color: #404040;
     font-size: 25px;
     font-style: normal;
@@ -67,7 +73,7 @@
     line-height: normal;
 }
 
-.movie-details-info-header p {
+.movie-details-release-date {
     color: #404040;
     font-size: 20px;
     font-style: normal;
@@ -75,16 +81,94 @@
     line-height: normal;
 }
 
+.movie-details-runtime {
+    color: #404040;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.movie-details-genre-wrap {
+    display: flex;
+    gap: 12px;
+}
+
+.movie-details-genre {
+    cursor: pointer;
+    background: none;
+    border-radius: 15px;
+    border: 1px solid #BE123C;
+    padding: 3px 18px;
+    color: #B91C1C;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.movie-details-genre:hover {
+    background: #f8e7eb;
+}
+
 .movie-details-info-main-footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-    margin-top: 20px;
+}
+
+.movie-info-credits-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+.movie-info-directors {
+    color: #BE123C;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.movie-info-directors span {
+    color: #333;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.movie-info-writers {
+    color: #BE123C;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.movie-info-writers span {
+    color: #333;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.movie-info-stars {
+    color: #BE123C;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.movie-info-stars span {
+    color: #333;
+    font-weight: 400;
+    font-size: 18px;
 }
 
 .movie-detail-info-rating {
-    margin-bottom: 70px;
+    padding-bottom: 20px;
     width: 100%;
 }
 
@@ -154,13 +238,13 @@
 }
 .movie-details-info-rating {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: center;
     gap: 6px;
 }
 
 .movie-recommendations-wrap {
-    gap: 33px;
+    gap: 25px;
     display: flex;
     flex-direction: column;
 }
@@ -206,7 +290,7 @@
     display: flex;
     border-radius: 15px;
     overflow: hidden;
-    margin-bottom: 30px;
+    height: 15rem;
     position: relative;
     cursor: pointer;
 }

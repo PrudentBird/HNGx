@@ -8,8 +8,6 @@ import Footer from '../components/Footer/Footer';
 import '../components/Search/Search.css';
 
 const Search = () => {
-    const location = useLocation();
-    const isSearchPage = location.pathname === '/search';
 	const [noResult, setNoResult] = useState(false);
     const [movies, setMovies] = useState([]);
     const { search } = useLocation();

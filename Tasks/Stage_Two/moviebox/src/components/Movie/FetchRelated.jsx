@@ -12,7 +12,6 @@ const FetchRelated = () => {
     fetch(apiUrl)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setRelatedMovies(data.results);
         setLoading(false);
       })
@@ -31,7 +30,7 @@ const FetchRelated = () => {
   }
 
   const randomMovies = [];
-  while (randomMovies.length < 2) {
+  while (randomMovies.length < 3) {
     const randomIndex = Math.floor(Math.random() * relatedMovies.length);
     const randomMovie = relatedMovies[randomIndex];
     if (!randomMovies.includes(randomMovie)) {

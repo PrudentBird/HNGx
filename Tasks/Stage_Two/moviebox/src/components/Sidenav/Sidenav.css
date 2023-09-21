@@ -11,19 +11,27 @@
 
 .sidenav-link-route {
     text-decoration: none;
+    width: 100%;
+}
+
+.sidenav-link-route:hover .sidenav-list-icon {
+    color: #BE123C;
+}
+
+.sidenav-link-route:hover .sidenav-list-item span {
+    color: #BE123C;
 }
 
 .sidenav-logo-wrap {
-  display: flex;
-  align-items: flex-start                                                                           ;
+    display: flex;
+    align-items: flex-start;
+    margin-left: 2rem;
 }
 
 .sidenav-logo-content {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-top: 52px;
-    margin-bottom: 75px;
     text-decoration: none;
 }
 
@@ -44,28 +52,52 @@
 }
 
 .sidenav-links {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  padding: 15px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 100%;
 }
 
 .sidenav-list {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidenav-link-routes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+}
+
+.sidenav-link-routes .active {
+    background: #f8e7eb;
+    border-right: 5px solid #BE123C;   
+}
+
+.active .sidenav-list-icon {
+    color: #BE123C;
+}
+
+.active .sidenav-list-item span {
+    color: #BE123C;
 }
 
 .sidenav-list-item {
     list-style-type: none;
     display: flex;
     align-items: center;
-    padding: 14px 0;
+    padding: 14px 2rem;
     margin: 8px 0;
     justify-content: unset;
 }
 
-.sidenav-list-item i {
+.sidenav-list-icon {
     font-size: 1.25rem;
     color: #333;
     display: flex;
@@ -77,22 +109,32 @@
     display: inline-block;
     position: relative;
     color: #333;
-    font-weight: 500;
+    font-weight: 600;
     padding: 10px;
     border-radius: 5px;
 }
 
-.sidenav-list-extension {
-    margin-bottom: 70px;
+.sidenav-list-extension-route {
+    text-decoration: none;
 }
 
 .sidenav-list-extension .sidenav-list-item {
   justify-content: space-between;
 }
 
+.sidenav-list-extension-icon {
+    color: #333;
+}
+
+.sidenav-list-extension:hover .sidenav-list-item span {
+    color: #BE123C;
+}
+
+.sidenav-list-extension:hover .sidenav-list-extension-icon {
+    color: #BE123C;
+}
+
 .playQuiz {
-    margin-top: 58px;
-    margin-bottom: 34px;
     width: 12rem;
     height: 15rem;
     flex-shrink: 0;
