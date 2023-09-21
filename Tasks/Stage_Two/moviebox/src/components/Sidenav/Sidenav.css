@@ -151,7 +151,6 @@
 
 .playQuiz h3 {
     color: rgba(51, 51, 51, 0.80);
-    font-family: Poppins;
     font-size: 1.1rem;
     font-style: normal;
     font-weight: 600;
@@ -160,7 +159,6 @@
 
 .playQuiz p {
     color: #666;
-    font-family: Poppins;
     font-size: 0.85rem;
     font-style: normal;
     font-weight: 500;
