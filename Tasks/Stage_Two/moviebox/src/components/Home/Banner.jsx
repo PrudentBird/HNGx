@@ -16,7 +16,6 @@ const Banner = ({ movieData }) => {
       fetch(apiUrl)
         .then((response) => response.json())
         .then((data) => {
-          
           if (data.items && data.items.length > 0) {
             const videoId = data.items[0].id.videoId;
             const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;

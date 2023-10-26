@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Movie from './pages/Movie';
 import Search from './pages/Search';
 import { NavProvider } from './NavContext';
+import Discover from './pages/Discover';
 
 function App() {
   return (
@@ -12,8 +13,9 @@ function App() {
         <NavProvider>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/movie/:movieId" element={<Movie />} />
+            <Route path="/discover" element={<Discover />} />
             <Route path="/search" element={<Search />} />
+            <Route path="/movie/:movieId" element={<Movie />} />
           </Routes>
         </NavProvider>
       </Router>

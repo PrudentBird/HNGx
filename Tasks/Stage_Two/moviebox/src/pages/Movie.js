@@ -61,7 +61,7 @@ const Movie = () => {
           <div className='movie-details-info-main'>
             <div className='movie-details-info-main-header'>
               <div className='movie-details-info-header'>
-                <h2 data-testid='movie-title' className='movie-details-title'>{movie.original_title}</h2>
+                <h2 data-testid='movie-title' className='movie-details-title'>{movie.original_title ? movie.original_title : 'Undefined'}</h2>
                 <p data-testid='movie-release-date' className='movie-details-release-date'>{movie.release_date ? movie.release_date.split('-')[0] : 'Null'}</p>
                 <p data-testid='movie-runtime' className='movie-details-runtime'>{`${Math.floor(movie.runtime / 60)}h ${movie.runtime % 60}m`}</p>
                 <div className='movie-details-genre-wrap'>

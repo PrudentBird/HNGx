@@ -10,15 +10,14 @@
 
 .search-container {
     margin-top: 85px;
-    padding: 3.13rem 100px;
+    padding: 3.13rem 127.875px;
 }
 
 .search-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 44px;
-    padding: 0 27.875px;
+    margin-bottom: 45px;
 }
 
 .search-header h2 {

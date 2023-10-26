@@ -1,6 +1,7 @@
 // import React from 'react'
 import { useState, useEffect } from 'react'
 import MovieCard from './MovieCard'
+import { Link } from 'react-router-dom'
 
 const Movies = () => {
     const [ movies, setMovies ] = useState([])
@@ -21,12 +22,14 @@ const Movies = () => {
       <div className='featured-container'>
       <div className="featured-header">
         <h2>Featured Movies</h2>
-        <button className='featured-ctabtn'>
-          <span>
-            See&nbsp;More
-          </span>
-          <i className='featured-ctabtn-icon fa-solid fa-chevron-right'></i>
-        </button>
+        <Link className='featured-ctabtn-wrap' to="/discover" >
+          <button className='featured-ctabtn'>
+            <span>
+              See&nbsp;More
+            </span>
+            <i className='featured-ctabtn-icon fa-solid fa-chevron-right'></i>
+          </button>
+        </Link>
       </div>
       <div className='featured-movies'>
         {movies.map((movie) => (

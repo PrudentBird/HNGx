@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;0,9..40,1000;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700;1,9..40,800;1,9..40,900;1,9..40,1000&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.scrollbar {
+    overflow: overlay;
+    cursor: pointer;
+}
+
+.scrollbar::-webkit-scrollbar {
+    background-color: rgba(0,0,0,0);
+    width: 6px;
+    height: 6px;
+    z-index: 999999;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+    background-color: rgba(0,0,0,0);
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0);
+    border-radius:16px;
+}
+
+.scrollbar::-webkit-scrollbar-button {
+    display:none;
+}
+
+.scrollbar:hover::-webkit-scrollbar-thumb {
+    background-color: #a0a0a5;
+}
+
+.discover-wrap {
+    margin-top: 85px;
+    padding: 3.13rem 127.875px;
+    margin-bottom: 4rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.discover-ctabtn-wrap {
+    text-decoration: none;
+}
+
+.discover-ctabtn {
+    border: none;
+    background: none;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.discover-ctabtn span {
+    color: var(--rose-700, #BE123C);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.discover-ctabtn i {
+    font-size: 0.85rem;
+    line-height: normal;
+    color: var(--rose-700, #BE123C);
+}
+
+.discover-movies-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 45px;
+}
+
+.discover-movies-header h2 {
+    color: #000;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding: 0;
+}
+
+.discover-movies-content {
+    padding-bottom: 25px;
+    display: flex;
+    gap: 100px;
+    overflow-x: auto;
+}
+
+.discover-movies-navigation {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    margin: 25px 0;
+}
+
+.discover-movies-nav-left {
+    position: absolute;
+    z-index: 1;
+    bottom: 350px;
+    left: 20px;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f1f1f1;
+    border: 1px solid #ffb9ca;
+    border-radius: 100%;
+    transition: all .3s ease-in-out;
+}
+
+.discover-movies-nav-left:hover {
+    background: #ddd;
+}
+
+.discover-movies-nav-left i {
+    color: #333;
+}
+
+.discover-movies-nav-right {
+    position: absolute;
+    z-index: 1;
+    bottom: 350px;
+    right: 20px;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f1f1f1;
+    border: 1px solid #ffb9ca;
+    border-radius: 100%;
+    transition: all .3s ease-in-out;
+}
+
+.discover-movies-nav-right:hover {
+    background: #ddd;
+}
+
+.discover-movies-nav-right i {
+    color: #333;
+}
+
+.discover-tvseries-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 45px 0;
+}
+
+.discover-tvseries-header h2 {
+    color: #000;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding: 0;
+}
+
+.discover-tvseries-content { 
+    padding-bottom: 49px;
+    display: flex;
+    gap: 100px;
+    overflow-x: auto;
+}
+
+.discover-tvseries-content::-webkit-scrollbar {
+    /* display: none; */
+}

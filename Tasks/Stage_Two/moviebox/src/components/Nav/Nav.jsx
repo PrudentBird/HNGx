@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, Link, useLocation } from 'react-router-dom';
+import { Turn as Hamburger } from 'hamburger-react'
 import logo from '../../assets/logo.png';
 import menuIcon from '../../assets/menu.png';
 import './Nav.css';
@@ -8,7 +9,8 @@ import { useNav } from '../../NavContext';
 const Nav = ({ className }) => {
   const [scrollY, setScrollY] = useState(0);
   const [query, setQuery] = useState('');
-  const { isSearchActive, setIsSearchActive } = useNav(); 
+  const [isOpen, setOpen] = useState(false)
+  const { isSearchActive, setIsSearchActive } = useNav();
 
   const handleScroll = () => {
     setScrollY(window.scrollY);
@@ -67,6 +69,7 @@ const Nav = ({ className }) => {
               <span className="logo-txt">MovieBox</span>
             </div>
           </Link>
+          <Hamburger toggled={isOpen} toggle={setOpen} size={21} distance='sm' color='#fff' rounded className='search-icon-responsive' />
           <form className="search-wrap" onSubmit={searchMovieHandler}>
             <input
               type='text'
