@@ -1,15 +1,15 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { useNavigate, Link, useLocation } from 'react-router-dom';
-import { Turn as Hamburger } from 'hamburger-react'
-import logo from '../../assets/logo.png';
-import menuIcon from '../../assets/menu.png';
-import './Nav.css';
-import { useNav } from '../../NavContext'; 
+import React, { useState, useEffect, useRef } from "react";
+import { useNavigate, Link, useLocation } from "react-router-dom";
+import { Turn as Hamburger } from "hamburger-react";
+import logo from "../../assets/logo.png";
+import menuIcon from "../../assets/menu.png";
+import "./Nav.css";
+import { useNav } from "../../NavContext";
 
 const Nav = ({ className }) => {
   const [scrollY, setScrollY] = useState(0);
-  const [query, setQuery] = useState('');
-  const [isOpen, setOpen] = useState(false)
+  const [query, setQuery] = useState("");
+  const [isOpen, setOpen] = useState(false);
   const { isSearchActive, setIsSearchActive } = useNav();
 
   const handleScroll = () => {
@@ -17,10 +17,10 @@ const Nav = ({ className }) => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -30,15 +30,15 @@ const Nav = ({ className }) => {
 
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
-    const q = queryParams.get('q') || '';
+    const q = queryParams.get("q") || "";
     setQuery(q);
   }, [location]);
 
   const searchMovieHandler = (e) => {
     e.preventDefault();
 
-    if (searchInput.current.value === '') {
-      alert('We would love to know the movie you are looking for');
+    if (searchInput.current.value === "") {
+      alert("We would love to know the movie you are looking for");
       return;
     }
     const newQuery = encodeURIComponent(searchInput.current.value.trim());
@@ -50,7 +50,7 @@ const Nav = ({ className }) => {
   };
 
   const clearInputField = () => {
-    setQuery('');
+    setQuery("");
     setIsSearchActive(false);
     setTimeout(() => {
       searchInput.current.focus();
@@ -59,9 +59,15 @@ const Nav = ({ className }) => {
 
   return (
     <div>
-      <nav className={`navbar ${scrollY > 0 ? 'navbar-shadow' : ''} ${className}`}>
-        <div className={`navbar-wrap ${scrollY > 0 ? 'navbar-padding' : ''} ${className}`}>
-          <Link className='navLink' to="/">
+      <nav
+        className={`navbar ${scrollY > 0 ? "navbar-shadow" : ""} ${className}`}
+      >
+        <div
+          className={`navbar-wrap ${
+            scrollY > 0 ? "navbar-padding" : ""
+          } ${className}`}
+        >
+          <Link className="navLink" to="/">
             <div className="logo-wrap">
               <div className="logo-img-block">
                 <img src={logo} alt="" />
@@ -69,11 +75,21 @@ const Nav = ({ className }) => {
               <span className="logo-txt">MovieBox</span>
             </div>
           </Link>
-          <Hamburger toggled={isOpen} toggle={setOpen} size={21} distance='sm' color='#fff' rounded className='search-icon-responsive' />
+          <div className="hamburger">
+            <Hamburger
+              toggled={isOpen}
+              toggle={setOpen}
+              size={21}
+              distance="sm"
+              color="#fff"
+              rounded
+              className="search-icon-responsive"
+            />
+          </div>
           <form className="search-wrap" onSubmit={searchMovieHandler}>
             <input
-              type='text'
-              placeholder='What do you want to watch?'
+              type="text"
+              placeholder="What do you want to watch?"
               ref={searchInput}
               value={query}
               onChange={(e) => {
@@ -81,9 +97,11 @@ const Nav = ({ className }) => {
                 toggleSearchActivation();
               }}
             />
-            <button className='search-submit'>
+            <button className="search-submit">
               <i
-                className={`search-icon fa-solid ${isSearchActive ? 'fa-xmark' : 'fa-magnifying-glass'}`}
+                className={`search-icon fa-solid ${
+                  isSearchActive ? "fa-xmark" : "fa-magnifying-glass"
+                }`}
                 onClick={(event) => {
                   if (isSearchActive) {
                     event.preventDefault();
