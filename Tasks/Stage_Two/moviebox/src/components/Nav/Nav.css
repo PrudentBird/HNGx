@@ -179,7 +179,7 @@ img {
         display: none;
     }
 
-    .search-icon-responsive {
+    .hamburger {
         display: flex;
         color: #fff;
         font-size: 1.25rem;
